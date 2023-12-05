@@ -62,15 +62,24 @@ const Register = () => {
               <label>生年月日</label>
               <input name="date" type="date" value={registerBorn} onChange={(e) => setRegisterBorn(e.target.value)}/>
             </div>
-            <div>
-              <label>性別</label>
-              <input name="man" type="radio" value={registerMan} onChange={(e) => setRegisterMan(e.target.value)}/>
-              <input name="woman" type="radio" value={registerWoman} onChange={(e) => setRegisterWoman(e.target.value)}/>
+            <div class="gender-Inner">
+              <label>性別：</label>
+              <div className="gender-Input_btn_area">
+                <div className="gender-Input_btn">
+                  <input name="man" type="radio" value={registerMan} onChange={(e) => setRegisterMan(e.target.value)}/>
+                  <label>男性</label>
+                </div>
+                <div className="gender-Input_btn">
+                  <input name="woman" type="radio" value={registerWoman} onChange={(e) => setRegisterWoman(e.target.value)}/>
+                  <label>女性</label>
+                </div>
+              </div>
             </div>
-            <div>
-              <label>利用規約への同意</label>
-              <p>同意する</p>
-              <input name="consent" type="checkbox" value={registerUsername}/>
+            <div class="agreement-Inner">
+              <div className="agreement-Input_btn">
+                <input name="consent" type="checkbox" value={registerUsername}/>
+                <p><Link to={"https://menherasenpai.notion.site/457df49475494671807673a0a3346451?pvs=25"}>利用規約</Link>に同意する</p>
+              </div>
             </div>
             <button>登録する</button>
             <p>ログインは<Link to={`/login/`}>こちら</Link></p>
